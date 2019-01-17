@@ -1,8 +1,8 @@
 # What is this ?
 
-This is actually a collection of scripts/configuration values for your MacOS Terminal visual and general improvements, it comes with easy to use installer, it also installs Brew.sh Unix Ports Collection package manager too!
-It updates the the original bash from macOS to version 5, also does some changes to visual improve your terminal experience, by enabling colors and other usefull visual effects!
-All you need is to download these files and run ```./Install.sh```
+This is actually a collection of scripts/configuration values for your MacOS Terminal visual and general improvements, it comes with easy to use installer, also has abillity to install Brew.sh Unix Ports Collection package manager!
+Then it updates the the original bash from macOS (version 3) to version 5, also does some changes to visual improve your terminal experience, by enabling colors and other usefull visual effects!
+All you need is to download these files and run ```./Install.sh```. And for god sake it does not overrride any of your global system or environment values, all it does is new .bash_profile with some good stuff inside! :)
 
 # How it looks ?
 
