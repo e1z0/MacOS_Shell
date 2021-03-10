@@ -30,4 +30,5 @@ alias ln='ln -i'
 alias now='date +"%T"'
 # networking
 alias header='curl -I'
-
+export NODE_PATH='/usr/local/lib/node_modules'
+export LC_ALL=en_US.UTF-8
