@@ -1,9 +1,20 @@
-export VERSION="MacOS Shell Improvements v0.1 by justinas@eofnet.lt"
+export VERSION="MacOS Shell Improvements v0.2 by justinas@eofnet.lt"
 ver () {
-echo "(c) 2019 $VERSION"
+echo "(c) 2019-2021 $VERSION"
 }
 
-#export PS1="🖥  \W $ "
+tmstatus () {
+  eval $(tmutil status | grep -E '[^}];$' | perl -p -e 's/^\s+[\"]*//g;' -e 's/[\"]*\s+\=\s+/=/g') || (echo "Something get wrong..." && return 1)
+
+  if [[ $Running -eq 1 ]]
+  then
+    export LC_NUMERIC="en_US.UTF-8"
+    [[ $BackupPhase == "Copying" ]] && Percent=$(printf '%0.2f%%' `bc <<< $Percent*100`) && echo "${DateOfStateChange} ${BackupPhase} backup to ${DestinationMountPoint}: ${totalFiles} files - ${Percent} (~$((${TimeRemaining:-0}/60)) min." || echo "${DateOfStateChange} ${BackupPhase} (Destination ${DestinationID})."
+  else
+    echo "TimeMachine backup is not running."
+  fi
+}
+
 export PS1="\[\033[1;32m\]\u@🖥 \[\033[0m\]:\[\033[1;34m\]\w\[\033[0m\]# "
 # some aliases
 alias c='clear'
